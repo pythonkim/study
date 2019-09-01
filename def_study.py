@@ -13,4 +13,18 @@ def moon() -> int:
 #호출
 moon()
 
+def args_func(arg1, arg2, arg3):
+    print(arg1, arg2, arg3)
 
+args_func('hello', 'world', '!')
+args_func('!', arg3='hello', arg2='world')
+args_func('world', arg3='!', arg2='hello')
+args_func('hello', '!', arg3='world')
+
+def args2_func(arg1, *, arg2, arg3): #함수에 * 표가 있으면 뒤에는 위치인자 arg3='!' 이런식으로 앞에 arg3= 를 꼭 써야 한다.
+    print(arg1, arg2, arg3)
+
+args2_func('hello', 'world', '!') #요렇게 하면 에러가 난다. 즉, 위치인자를 꼭 넣어줘야 한다
+args2_func('!', arg3='hello', arg2='world')
+args2_func('world', arg3='!', arg2='hello')
+args2_func('hello', '!', arg3='world')
